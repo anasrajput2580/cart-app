@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import pizzaData from '../data/pizzaData'; // Import the pizza data
+
 
 function ProductDetail({ pizzaData }) {
   const { id } = useParams();
