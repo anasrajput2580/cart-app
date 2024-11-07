@@ -76,7 +76,7 @@ function ProductDetail({ pizzaData }) {
             checked={selectedAddons.addon1}
             onChange={handleAddOnChange}
           />
-          Extra Toppings
+          Extra Stuff
         </label>
         <label>
           <input

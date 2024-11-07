@@ -65,7 +65,7 @@ const [selectedPizza, setSelectedPizza] = useState(null);
 return (
   <Router>
     <div className="app">
-      <h1>Pizza Deals</h1>
+      <h1>Our Deals</h1>
       <Routes>
         <Route path="/" element={
           <div className="pizza-list">
