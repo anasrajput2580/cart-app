@@ -1,0 +1,100 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+/* src/App.css */
+
+/* src/App.css */
+
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+.pizza-list {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 20px; /* Space between items */
+  justify-items: center; /* Center items horizontally */
+  margin-top: 20px;
+}
+
+.pizza-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 250px; /* Control the width of each pizza item */
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+.pizza-item--img {
+  width: 100%;
+  height: auto;
+}
+
+.pizza-item--sizes {
+  margin-top: 10px;
+}
+
+.pizza-item--size {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* src/ProductDetail.css */
+.product-detail {
+  text-align: center;
+  padding: 20px;
+}
+
+.product-detail img {
+  width: 300px;
+  height: auto;
+}
+
+.product-detail h3 {
+  margin-top: 10px;
+}
+
+.product-detail button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
