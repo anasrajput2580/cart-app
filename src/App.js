@@ -1,16 +1,10 @@
-
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import PizzaItem from './components/PizzaItem';
-import ProductDetail from './components/ProductDetail'; // Import ProductDetail component
 import React, { useState } from 'react';
-import OrderSummary from './components/OrderSummary';
-import pizzaData from './data/pizzaData';
 import './App.css';
 import Navigation from './components/Navigation';
 import Content from './components/Content';
 import Option2 from './components/Option2';
 function App() {
-  const [activeOption, setActiveOption] = useState('Home'); // Default option
+  const [activeOption, setActiveOption] = useState('Option1'); // Default option
 
   const renderContent = () => {
     switch (activeOption) {
@@ -19,15 +13,15 @@ function App() {
       case 'Option2':
         return <Option2 />;
       case 'Settings':
-        
+        break
       case 'Notifications':
-      
+        break
       case 'Messages':
-       
+        break
       case 'Help':
-        
+        break
       case 'Logout':
-       
+        break
       default:
         return <div  style={{ padding: '20px', marginLeft: '20%' }}>Select an option from the menu</div>;
     }
