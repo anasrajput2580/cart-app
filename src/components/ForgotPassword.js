@@ -128,10 +128,11 @@ const ForgotPassword = () => {
   const [newPassword, setNewPassword] = useState('');
   const [step, setStep] = useState(1); // Step 1: Enter details, Step 2: Reset password
   const [message, setMessage] = useState('');
+  const [showLoginButton, setShowLoginButton] = useState(false); // Track login button visibility
 
   const handleValidation = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/validate-user', {
+    const response = await fetch("http://localhost:5000/api/validate-user", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -141,6 +142,7 @@ const ForgotPassword = () => {
 
     if (response.ok) {
       setStep(2); // Move to password reset step
+      setMessage('');
     } else {
       setMessage('Invalid email or username.');
     }
@@ -148,7 +150,7 @@ const ForgotPassword = () => {
 
   const handlePasswordReset = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/reset-password', {
+    const response = await fetch("http://localhost:5000/api/reset-password", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -158,23 +160,25 @@ const ForgotPassword = () => {
 
     if (response.ok) {
       setMessage('Password successfully updated. You can now log in.');
+      setShowLoginButton(true); // Show the login button
     } else {
       setMessage('Failed to reset password. Please try again.');
     }
   };
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif', maxWidth: '400px', margin: 'auto', textAlign: 'center' }}>
       {step === 1 ? (
-        <form onSubmit={handleValidation}>
-          <h2>Forgot Password</h2>
-          <p>Enter your email and username to reset your password.</p>
+        <form onSubmit={handleValidation} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <h2 style={{ color: '#333' }}>Forgot Password</h2>
+          <p style={{ fontSize: '14px', color: '#555' }}>Enter your email and username to reset your password.</p>
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
           />
           <input
             type="text"
@@ -182,24 +186,66 @@ const ForgotPassword = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
           />
-          <button type="submit">Validate</button>
+          <button
+            type="submit"
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '5px',
+              backgroundColor: '#007bff',
+              color: '#fff',
+              cursor: 'pointer',
+            }}
+          >
+            Validate
+          </button>
         </form>
       ) : (
-        <form onSubmit={handlePasswordReset}>
-          <h2>Reset Password</h2>
-          <p>Enter your new password below.</p>
+        <form onSubmit={handlePasswordReset} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <h2 style={{ color: '#333' }}>Reset Password</h2>
+          <p style={{ fontSize: '14px', color: '#555' }}>Enter your new password below.</p>
           <input
             type="password"
             placeholder="New Password"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
             required
+            style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
           />
-          <button type="submit">Reset Password</button>
+          <button
+            type="submit"
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '5px',
+              backgroundColor: '#007bff',
+              color: '#fff',
+              cursor: 'pointer',
+            }}
+          >
+            Reset Password
+          </button>
         </form>
       )}
-      {message && <p>{message}</p>}
+      {message && <p style={{ color: '#28a745', marginTop: '1rem' }}>{message}</p>}
+      {showLoginButton && (
+        <button
+          onClick={() => (window.location.href = '/')}
+          style={{
+            marginTop: '1rem',
+            padding: '10px 20px',
+            border: 'none',
+            borderRadius: '5px',
+            backgroundColor: '#28a745',
+            color: '#fff',
+            cursor: 'pointer',
+          }}
+        >
+          Go to Login
+        </button>
+      )}
     </div>
   );
 };
