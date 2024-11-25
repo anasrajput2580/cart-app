@@ -21,5 +21,4 @@ const Navigation = ({ activeOption, onOptionClick }) => {
         </div>
   );
 };
-
 export default Navigation;
