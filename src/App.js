@@ -53,7 +53,7 @@
 
 
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation';
 import Content from './components/Content';
