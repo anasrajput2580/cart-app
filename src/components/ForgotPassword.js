@@ -132,7 +132,7 @@ const ForgotPassword = () => {
 
   const handleValidation = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/validate-user", {
+    const response = await fetch("https://membershipserver-v3ogbq0u.b4a.run/api/validate-user", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -150,7 +150,7 @@ const ForgotPassword = () => {
 
   const handlePasswordReset = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/reset-password", {
+    const response = await fetch("https://membershipserver-v3ogbq0u.b4a.run/api/reset-password", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
