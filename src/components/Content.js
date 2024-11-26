@@ -105,6 +105,11 @@ const styles = {
         justifyContent: 'space-around',
         padding: '20px',
         flexWrap: 'wrap'
+        // display: 'flex',             // Use flexbox for alignment
+        // justifyContent: 'space-between',  // Adjust spacing between elements
+        // alignItems: 'center',        // Vertically align items
+        // marginTop: '20px',           // Add margin for spacing
+        // width: '100%',    
     },
     card: {
         border: '1px solid #ccc',
@@ -142,24 +147,38 @@ const styles = {
         fontSize: '16px',
         color: '#003366'
     },
+    // totalCost: {
+    //     marginTop: '20px',
+    //     fontWeight: 'bold',
+    //     fontSize: '20px',
+    //     color: '#003366',
+    //     textAlign: 'center',
+    //     width: '100%'
+    // },
+    // resetButton: {
+    //     marginTop: '-40px',
+    //     padding: '10px 20px',
+    //     fontSize: '16px',
+    //     backgroundColor: '#ff6666',
+    //     color: '#ffffff',
+    //     border: 'none',
+    //     borderRadius: '5px',
+    //     cursor: 'pointer'
+    // }
     totalCost: {
-        marginTop: '20px',
         fontWeight: 'bold',
         fontSize: '20px',
         color: '#003366',
-        textAlign: 'center',
-        width: '100%'
+        textAlign: 'right',           // Align text to the left within its space
     },
     resetButton: {
-   
         padding: '10px 20px',
         fontSize: '16px',
         backgroundColor: '#ff6666',
         color: '#ffffff',
         border: 'none',
         borderRadius: '5px',
-        cursor: 'pointer'
+        cursor: 'pointer',
     }
 };
-
 export default Content;
