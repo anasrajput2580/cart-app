@@ -186,4 +186,112 @@ const styles = {
     }
 };
 
-export default Option2;
+// export default Option2;
+// import React, { useContext } from 'react';
+// import { TotalCostContext } from './TotalCostContext.js';
+// import InsuranceCard from './InsuranceCard';
+
+// const Option2 = () => {
+//     const { totalCost, selectedOptions, updateTotalCost, reset } = useContext(TotalCostContext);
+
+//     const plans = [
+//         {
+//             title: 'Aetna Basic22',
+//             description: 'The Aetna Basic plan is a supplemental insurance option that pays a fixed dollar amount...',
+//             options: [
+//                 { label: 'Employee Only', price: 11.31 },
+//                 { label: 'Employee + Spouse', price: 23.75 },
+//                 { label: 'Employee + Child(ren)', price: 22.62 },
+//                 { label: 'Employee + Spouse+Child(ren)', price: 35.06 }
+//             ],
+//             link: '/more-details-basic'
+//         },
+//         {
+//             title: 'Aetna Basic Plus22',
+//             description: 'The Aetna Basic Plus plan is a supplemental insurance option that pays a fixed dollar amount...',
+//             options: [
+//                 { label: 'Employee Only', price: 31.16 },
+//                 { label: 'Employee + Spouse', price: 65.43 },
+//                 { label: 'Employee + Child(ren)', price: 62.32 },
+//                 { label: 'Employee + Spouse+Child(ren)', price: 96.59 }
+//             ],
+//             link: '/more-details-plus'
+//         },
+//         {
+//             title: 'Aetna Basic Premium22',
+//             description: 'The Aetna Basic Premium plan provides higher coverage for medical expenses...',
+//             options: [
+//                 { label: 'Employee Only', price: 50.00 },
+//                 { label: 'Employee + Spouse', price: 100.00 },
+//                 { label: 'Employee + Child(ren)', price: 80.00 },
+//                 { label: 'Employee + Spouse+Child(ren)', price: 120.00 }
+//             ],
+//             link: '/more-details-premium'
+//         }
+//     ];
+
+// const handleOptionChange = (planTitle, newOption) => {
+//     const previousSelection = selectedOptions[planTitle] || {};
+//     const previousPrice = typeof previousSelection.price === 'string'
+//         ? parseFloat(previousSelection.price.substring(1))
+//         : previousSelection.price || 0;
+//     const newPrice = typeof newOption.price === 'string'
+//         ? parseFloat(newOption.price.substring(1))
+//         : newOption.price;
+
+//     if (isNaN(newPrice)) {
+//         console.warn('Invalid price for the new option:', newOption);
+//         return;
+//     }
+
+//     updateTotalCost(planTitle, newOption, previousPrice);
+// };
+
+
+//     return (
+//         <div style={styles.container}>
+//             <div style={styles.totalCost}>
+//                 <h3>Total Cost: ${totalCost.toFixed(2)}</h3>
+//                 <button style={styles.resetButton} onClick={reset}>Reset</button>
+//             </div>
+//             {plans.map((plan, index) => (
+//                 <InsuranceCard
+//                     key={index}
+//                     title={plan.title}
+//                     description={plan.description}
+//                     options={plan.options}
+//                     link={plan.link}
+//                     selectedOption={selectedOptions[plan.title]}
+//                     onOptionChange={(newOption) => handleOptionChange(plan.title, newOption)}
+//                 />
+//             ))}
+//         </div>
+//     );
+// };
+
+// const styles = {
+//     container: {
+//         display: 'flex',
+//         justifyContent: 'space-around',
+//         padding: '20px',
+//         flexWrap: 'wrap'
+//     },
+//     totalCost: {
+//         fontWeight: 'bold',
+//         fontSize: '20px',
+//         color: '#003366',
+//         textAlign: 'right',
+//     },
+//     resetButton: {
+//         padding: '10px 20px',
+//         fontSize: '16px',
+//         backgroundColor: '#ff6666',
+//         color: '#ffffff',
+//         border: 'none',
+//         borderRadius: '5px',
+//         cursor: 'pointer',
+//         marginLeft: '1rem'
+//     }
+// };
+
+ export default Option2;
