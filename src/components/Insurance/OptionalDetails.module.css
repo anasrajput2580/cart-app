@@ -1,0 +1,45 @@
+.detailsPage {
+  padding: 20px;
+  margin-left: 250px; /* Width of the navigation pane */
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.nav a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+  gap: 20px;
+}
+
+.media img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.info {
+  flex: 2;
+}
+
+.backButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background-color: #0056b3;
+}
+
+.footer {
+  margin-top: 20px;
+  color: #6c757d;
+}

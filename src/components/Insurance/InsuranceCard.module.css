@@ -1,0 +1,41 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  width: 300px;
+  background-color: #f9f9f9; 
+ 
+}
+
+.title {
+  background-color: #003366;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px 5px 0 0;
+}
+
+.description {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.options {
+  margin-top: 10px;
+}
+
+.optionLabel {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.detailsLink {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.detailsLink:hover {
+  text-decoration: underline;
+}

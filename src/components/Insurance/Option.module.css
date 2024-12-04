@@ -1,0 +1,26 @@
+.contentContainer {
+  padding: 20px;
+  margin-left: 350px; /* Width of the navigation pane */
+}
+
+.totalCost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.resetButton {
+  padding: 10px 20px;
+  background-color: #ff6666;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

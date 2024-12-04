@@ -1,0 +1,56 @@
+.navPane {
+  width: 250px;
+  background: linear-gradient(180deg, #003366, #003366);
+  padding: 20px;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: fixed;
+  top: 0px; /* Adjust this value to align the navPane with options */
+  height: 595px; /* Adjust height to account for the top offset */
+  overflow-y:auto;
+}
+
+.navPane h3 {
+  color: #003366;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.navPane ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navPane li {
+  margin: 15px 0;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.activeButton {
+  width: 115%;
+  padding: 10px;
+  background-color: #fff;
+  color: #003366;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: larger;
+}
