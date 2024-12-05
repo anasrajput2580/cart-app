@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import styles from './ForgotPassword.module.css';
 import { BACKEND_URL } from '../../config';
 

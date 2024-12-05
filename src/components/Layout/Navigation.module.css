@@ -1,95 +1,114 @@
-/* Default (Mobile-First Design) */
+/* Default: Hidden Sidepanel for Mobile View */
 .navPane {
-  width: 100%; /* Full width for smaller screens */
-  background: linear-gradient(180deg, #003366, #003366);
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjusted for mobile */
-  border-radius: 0; /* Remove rounded corners for a cleaner mobile look */
-
+  position: fixed;
   top: 0;
-  height: 100vh; /* Full viewport height for smaller screens */
-  overflow-y: auto;
+  left: -100%; /* Hide off-screen by default */
+  height: 100vh; /* Full viewport height */
+  width: 70%; /* Adjustable for mobile */
+  background: linear-gradient(180deg, #003366, #003366);
+  transition: left 0.3s ease-in-out; /* Smooth slide-in effect */
+  z-index: 999; /* Ensure it's above other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .navPane h3 {
-  color: #ffffff; /* Lighter text for better contrast */
-  font-size: 1.5em; /* Slightly larger font for mobile readability */
+  color: #ffff;
+  font-size: 1.2em;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
+  margin-top: 60px;
+}
+/* Show Sidepanel */
+.navPane.show {
+  left: 0; /* Slide into view */
 }
 
+/* Sidepanel Content */
 .navPane ul {
   list-style: none;
-  padding: 0;
+  padding: 20px;
   margin: 0;
 }
 
 .navPane li {
-  margin: 10px 0; /* Reduced spacing for smaller screens */
+  margin-bottom: 15px;
 }
 
-.button {
-  width: 100%; /* Full width for smaller screens */
-  padding: 12px;
-  background-color: #003366;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  font-weight: bold;
-  font-size: medium;
-}
-
-.activeButton {
-  width: 100%; /* Full width for active button on smaller screens */
+.navPane button {
+  width: 100%;
   padding: 12px;
   background-color: #ffffff;
   color: #003366;
-  border-radius: 10px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: bolder;
-  font-size: larger;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.navPane button:hover {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+/* Toggle Button for Mobile */
+.toggleButton {
+  position: relative;
+  top: 15px;
+  left: 15px;
+  background-color: #003366;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1.2rem;
+  align-content: right;
+}
+
+/* Active Button Styling */
+.activeButton {
+  background-color: #ffffff;
+  color: #003366;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
 /* Tablet Screens (min-width: 600px) */
 @media (min-width: 600px) {
+  .toggleButton {
+    display: none; /* Hide toggle button */
+  }
+
   .navPane {
-    width: 250px; /* Default width for tablet screens */
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    width: 250px; /* Fixed width for larger screens */
+    height: 100vh;
     position: fixed;
+    left: 0;
     top: 0;
-    height: 100vh; /* Full height for tablets */
-  }
-
-  .navPane h3 {
-    font-size: 1.4em; /* Adjust font size for tablets */
-  }
-
-  .button, .activeButton {
-    width: 90%; /* Slightly narrower buttons for better alignment */
-    margin: auto; /* Center buttons horizontally */
+    border-radius: 0;
   }
 }
 
-/* Laptop and Desktop Screens (min-width: 1024px) */
+/* Desktop Screens (min-width: 1024px) */
 @media (min-width: 1024px) {
   .navPane {
-    width: 250px; /* Fixed width for desktops */
-    height: calc(100vh - 20px); /* Account for margins and padding */
-    margin-top: 10px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    left: 0; /* Always visible */
+    width: 250px;
+    height: 100vh;
+    transition: none; /* No animation for desktops */
+     box-shadow: none; /*No shadow for static sidebar */
   }
-
   .navPane h3 {
-    font-size: 1.5em;
+    color: #ffff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 60px;
   }
-
-  .button, .activeButton {
-    width: 115%; /* Allow activeButton to extend slightly for desktop */
-  }
-}         
+}
