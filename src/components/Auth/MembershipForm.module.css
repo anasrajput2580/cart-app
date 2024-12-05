@@ -1,9 +1,11 @@
+/* Default styles for mobile-first design */
 .formContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background: linear-gradient(135deg, #003366, #003366);
+  padding: 1rem; /* Add padding for smaller screens */
 }
 
 .form {
@@ -11,13 +13,13 @@
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 90%; /* Full width for small screens */
   max-width: 400px;
   text-align: center;
 }
 
 .input {
-  width: 90%;
+  width: 100%; /* Full width on smaller screens */
   padding: 10px;
   margin: 0.5rem 0;
   border: 1px solid #cccccc;
@@ -35,7 +37,6 @@
   font-size: 1rem;
   transition: background-color 0.3s ease;
   margin-top: 1rem;
-  ;
 }
 
 .button:hover {
@@ -55,4 +56,46 @@
   display: block;
   color: #2575fc;
   margin: 0.5rem 0;
+}
+
+/* Styles for Tablets (screen width 600px to 1024px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .formContainer {
+    padding: 2rem;
+  }
+
+  .form {
+    padding: 2rem;
+    max-width: 500px; /* Slightly larger width */
+  }
+
+  .input {
+    font-size: 1.1rem; /* Slightly larger input font size */
+  }
+
+  .button {
+    font-size: 1.1rem; /* Slightly larger button font size */
+  }
+}
+
+/* Styles for Laptops and PCs (screen width above 1024px) */
+@media (min-width: 1024px) {
+  .formContainer {
+    justify-content: center;
+    padding: 3rem; /* Add more padding for large screens */
+  }
+
+  .form {
+    max-width: 600px; /* Wider form for large screens */
+  }
+
+  .input {
+    font-size: 1.2rem;
+    padding: 12px; /* Larger input padding */
+  }
+
+  .button {
+    font-size: 1.2rem;
+    padding: 12px 24px; /* Larger button padding */
+  }
 }

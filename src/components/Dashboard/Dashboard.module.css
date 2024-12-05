@@ -5,7 +5,18 @@
 
 .mainContent {
   flex: 1;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboardContainer {
+    flex-direction: column;
+  }
+
+  .mainContent {
+    padding: 10px;
+  }
 }

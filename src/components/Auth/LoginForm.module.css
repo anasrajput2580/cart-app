@@ -1,23 +1,25 @@
+/* Default (Mobile-First Design) */
 .formContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background: linear-gradient(135deg, #003366, #003366);
+  padding: 1rem; /* Add padding for better spacing on smaller screens */
 }
 
 .form {
   background-color: #ffffff;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 350px; /* Smaller max-width for mobile screens */
   text-align: center;
 }
 
 .input {
-  width: 90%;
+  width: 100%; /* Full width for mobile screens */
   padding: 10px;
   margin: 0.5rem 0;
   border: 1px solid #cccccc;
@@ -26,7 +28,7 @@
 }
 
 .button {
-  background-color:#003366;
+  background-color: #003366;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -51,4 +53,45 @@
   display: block;
   color: #2575fc;
   margin: 0.5rem 0;
+}
+
+/* Tablet Screens (min-width: 600px) */
+@media (min-width: 600px) {
+  .formContainer {
+    padding: 2rem; /* Add more padding for larger screens */
+  }
+
+  .form {
+    padding: 2rem;
+    max-width: 400px; /* Slightly larger form for tablets */
+  }
+
+  .input {
+    font-size: 1.1rem; /* Increase font size for better readability */
+  }
+
+  .button {
+    font-size: 1.1rem;
+    padding: 12px 24px; /* Adjust button padding */
+  }
+}
+
+/* Laptop and Desktop Screens (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .formContainer {
+    padding: 3rem; /* Add even more padding for desktops */
+  }
+
+  .form {
+    max-width: 500px; /* Wider form for large screens */
+  }
+
+  .input {
+    font-size: 1.2rem; /* Larger input font size */
+  }
+
+  .button {
+    font-size: 1.2rem;
+    padding: 14px 28px; /* Larger padding for buttons */
+  }
 }

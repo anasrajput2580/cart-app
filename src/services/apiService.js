@@ -19,6 +19,7 @@ export const saveSelection = async (userId, selectedOptions, totalPrice) => {
     }
 
     console.log('Selections saved successfully.');
+    alert('Selections saved successfully.');
   } catch (error) {
     console.error('Error saving selections:', error.message);
   }

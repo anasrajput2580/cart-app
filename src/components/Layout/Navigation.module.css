@@ -1,19 +1,19 @@
+/* Default (Mobile-First Design) */
 .navPane {
-  width: 250px;
+  width: 100%; /* Full width for smaller screens */
   background: linear-gradient(180deg, #003366, #003366);
   padding: 20px;
-  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: fixed;
-  top: 0px; /* Adjust this value to align the navPane with options */
-  height: 595px; /* Adjust height to account for the top offset */
-  overflow-y:auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjusted for mobile */
+  border-radius: 0; /* Remove rounded corners for a cleaner mobile look */
+
+  top: 0;
+  height: 100vh; /* Full viewport height for smaller screens */
+  overflow-y: auto;
 }
 
 .navPane h3 {
-  color: #003366;
-  font-size: 1.2em;
+  color: #ffffff; /* Lighter text for better contrast */
+  font-size: 1.5em; /* Slightly larger font for mobile readability */
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -27,14 +27,14 @@
 }
 
 .navPane li {
-  margin: 15px 0;
+  margin: 10px 0; /* Reduced spacing for smaller screens */
 }
 
 .button {
-  width: 100%;
-  padding: 10px;
+  width: 100%; /* Full width for smaller screens */
+  padding: 12px;
   background-color: #003366;
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -44,13 +44,52 @@
 }
 
 .activeButton {
-  width: 115%;
-  padding: 10px;
-  background-color: #fff;
+  width: 100%; /* Full width for active button on smaller screens */
+  padding: 12px;
+  background-color: #ffffff;
   color: #003366;
-  border: none;
   border-radius: 10px;
   cursor: pointer;
   font-weight: bolder;
   font-size: larger;
 }
+
+/* Tablet Screens (min-width: 600px) */
+@media (min-width: 600px) {
+  .navPane {
+    width: 250px; /* Default width for tablet screens */
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: fixed;
+    top: 0;
+    height: 100vh; /* Full height for tablets */
+  }
+
+  .navPane h3 {
+    font-size: 1.4em; /* Adjust font size for tablets */
+  }
+
+  .button, .activeButton {
+    width: 90%; /* Slightly narrower buttons for better alignment */
+    margin: auto; /* Center buttons horizontally */
+  }
+}
+
+/* Laptop and Desktop Screens (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .navPane {
+    width: 250px; /* Fixed width for desktops */
+    height: calc(100vh - 20px); /* Account for margins and padding */
+    margin-top: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .navPane h3 {
+    font-size: 1.5em;
+  }
+
+  .button, .activeButton {
+    width: 115%; /* Allow activeButton to extend slightly for desktop */
+  }
+}         
